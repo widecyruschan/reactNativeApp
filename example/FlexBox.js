@@ -7,17 +7,82 @@ import { StyleSheet, Text, View } from 'react-native';
 export default class FlexBox extends React.Component {
   render() {
     return (
-       <View style={styles.flexContainer}  >
-          <Text style={styles.text} >
-             1
-          </Text>
-          <Text style={[styles.text,{flex:2}]} >
-             2
-          </Text>
-          <Text style={[styles.text,{flex:1}]} >
-             3
-          </Text>          
+       <View style={[styles.margginBox]}>
+      <View style={[styles.box,styles.height400,styles.width400]}>
+        <View style={styles.label}>
+          <Text>margin</Text>
         </View>
+        <View style={[styles.top,styles.height50,styles.bgred]}>
+          <Text style={styles.whites}>top</Text>
+        </View>
+        <View style={styles.borderBox}>
+          <View style={[styles.left,styles.bgred]}>
+            <Text style={styles.whites}>left</Text>
+          </View>
+          <View style={[styles.box,styles.height300]}>
+            <View style={styles.label}>
+              <Text style={styles.whites}>border</Text>
+            </View>
+            <View style={[styles.top, styles.height50,styles.bggreen]}>
+              <Text style={styles.whites}>top</Text>
+            </View>
+            <View style={styles.paddingBox}>
+              <View style={[styles.left,styles.bggreen]}>
+                <Text style={styles.whites}>left</Text>
+              </View>
+              <View style={[styles.box,styles.height200]}>
+                <View style={styles.label}>
+                 <Text style={styles.whites}>padding</Text>
+                </View>
+                <View style={[styles.top,styles.height50,styles.bgyellow]}>
+                  <Text style={styles.whites}>top</Text>
+                </View>
+                <View style={styles.elementBox}>
+                  <View style={[styles.left,styles.bgyellow]}>
+                    <Text style={styles.whites}>left</Text>
+                  </View>
+                  <View style={[styles.box,styles.height100]}>
+                    <View style={styles.label}>
+                      <Text style={styles.whites}>element</Text>
+                    </View>
+                    <View style={styles.widthdashed}>
+                    </View>
+                    <View style={styles.heightdashed}>
+                    </View>
+                    <View style={styles.measureBox}>
+                      <View style={styles.right}>
+                        <Text>height</Text>
+                      </View>
+                    </View>
+                    <View style={[styles.bottom,styles.height50]}>
+                      <Text>width</Text>
+                    </View>
+                  </View>
+                  <View style={[styles.right,styles.bgyellow]}>
+                    <Text style={styles.whites}>right</Text>
+                  </View>
+                </View>
+                <View style={[styles.bottom,styles.height50,styles.bgyellow]}>
+                  <Text>bottom</Text>
+                </View>
+              </View>
+              <View style={[styles.right,styles.bggreen]}>
+                <Text>right</Text>
+              </View>
+            </View>
+            <View style={[styles.bottom,styles.height50,styles.bggreen]}>
+              <Text>bottom</Text>
+            </View>
+          </View>
+          <View style={[styles.right,styles.bgred]}>
+            <Text>right</Text>
+          </View>
+        </View>
+        <View style={[styles.bottom,styles.height50,styles.bgred]}>
+          <Text style={styles.colorWhite}>bottom</Text>
+        </View>
+      </View>
+    </View>
     );
   }
 }
@@ -49,92 +114,92 @@ const styles = StyleSheet.create({
         backgroundColor:  '#414142',
       },
       bgyellow: {
-        background-color: '#D64078',
+        backgroundColor: '#D64078',
       },
       box: {
-        display: 'flex',
         flexDirection: 'column',
         flex: 1,
         position: 'relative',
+        
+      },
+      boxColor:{
         color: '#FDC72F',
-        // lineHeight: 1em
       },
       label: {
-        top: 0;
-        left: 0;
         paddingTop:0,
         paddingLeft:3,
         paddingBottom:3,
         paddingRight:0,
         position: 'absolute',
         backgroundColor: '#FDC72F',
-        color: '#fff',
+      },
+      yellow:{
+        color: 'yellow',
+        fontWeight:'900',
+      },
+      whites:{
+        color: 'white',
+        fontWeight:'900',
       },
       top: {
-        width: 100%;
-        justifyContent: 'center';
-        display: 'flex';
-        alignItems: 'center';
+        justifyContent: 'center',
+        alignItems: 'center',
       },
       bottom: {
-        width: 100%;
-        display: 'flex';
-        justifyContent: 'center';
-        alignItems: 'center';
+        justifyContent: 'center',
+        alignItems: 'center',
       },
       right: {
-        width: 50;
-        display: 'flex',
+        width: 50,
         justifyContent: 'space-around',
         alignItems: 'center',
       },
       left: {
-        width: 50;
-        display: 'flex';
-        justifyContent: 'space-around';
-        alignItems: 'center';
+        width: 50,
+        justifyContent: 'space-around',
+        alignItems: 'center',
       },
       heightdashed: {
         position: 'absolute',
         right: 20,
-        height: 100%,
-        borderTopWidth: 1,
-        borderTopColor: '#FDC72F',
-        borderStyle: 'solid'
+        borderLeftWidth: 1,
+        position :'absolute',
+        top:0,
+        bottom:0,
+        borderLeftColor: '#FDC72F',
       },
       widthdashed: {
-        position: 'absolute';
-        left: 0;
-        width: 100%,
-        bottom: 24,
+        position: 'absolute',
+        left: 0,
+        right:0,
+        bottom: 25,
         borderTopWidth: 1,
         borderTopColor: '#FDC72F',
-        borderStyle: 'solid'
       },
-      margginBox: {
-        position:'absolute',
+       margginBox:{
+        position: 'absolute',
         top: 100,
         paddingLeft:7,
         paddingRight:7,
       },
       borderBox: {
         flex: 1,
-        display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'space-between',
       },
       paddingBox: {
         flex: 1,
-        display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'space-between',
       },
       elementBox:{
         flex: 1,
-        display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'space-between',
       },
       measureBox: {
         flex: 1,
-        display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
       }
